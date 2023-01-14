@@ -8,5 +8,6 @@
 - [IPsec VPN](https://github.com/hwdsl2/setup-ipsec-vpn)
 - [Xary-UI](https://oss.msft.vip/x-ui/)
 - [useful web](https://thuscn.com/lab/)
+- [terminalizer](https://github.com/faressoft/terminalizer)
 - [awesome-raspberry-pi](https://github.com/thibmaek/awesome-raspberry-pi)
 - [Kubernetes_Advanced_Practical_2rd](https://github.com/iKubernetes/Kubernetes_Advanced_Practical_2rd)
