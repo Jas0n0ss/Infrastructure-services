@@ -3,3 +3,4 @@ description: Repository of teches to architecture
 
 #show_downloads: true
 #theme: jekyll-theme-cayman
+remote_theme: rundocs/jekyll-rtd-theme
