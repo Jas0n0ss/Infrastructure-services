@@ -1,6 +1,5 @@
-title: oss
-description: A collection of interesting things on oss...
+title: way-to-architecture
+description: Repository of teches to architecture
 
 show_downloads: true
-
 theme: jekyll-theme-cayman
