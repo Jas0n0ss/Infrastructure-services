@@ -1,9 +1,3 @@
-> 参考
-> * [linw7的github](https://github.com/linw7/Skill-Tree/blob/master/Linux%E5%B7%A5%E5%85%B7.md)
-> * 《鸟哥的Linux私房菜》
-
-<br>
-
 <!-- GFM-TOC -->
 * [一.文件管理](#一文件管理)
     * [1.文件查找：find](#1文件查找find)
@@ -52,7 +46,7 @@
     * [4.显示文件尾：tail](#4显示文件尾tail)
     * [5.版本控制：git](#5版本控制git)
     * [6.设置别名：alias](#6设置别名alias)
-<!-- GFM-TOC -->
+    <!-- GFM-TOC -->
 
 
 <br>

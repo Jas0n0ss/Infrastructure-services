@@ -1,10 +1,10 @@
+![](https://www.reliancedigital.in/wp-content/uploads/2021/04/cover_choose_linux_distr.jpg)
 
-## Repository of teches to architecture
+### Infrastructure services
 
-> Overview
+#### Infrastructure categories
 
----
-
-| [linux](linux/README.md)      | [k8s](k8s/README.md)       | [database](database/sql.md)  |
-| ----------------------------- | -------------------------- | ---------------------------- |
-| [network](network/network.md) | [docker](docker/docker.md) | [homesrv](homesrv/README.md) |
+|        Category        |     Category     |         Category         |        Category        |
+| :--------------------: | :--------------: | :----------------------: | :--------------------: |
+| [Container](Container) |  [Linux](Linux)  | [kubernetes](kubernetes) | [Webserver](Webserver) |
+|  [Database](Database)  | [Devops](devops) |    [Monitor](Monitor)    |   [Network](Network)   |
