@@ -1,6 +1,6 @@
 ![](https://www.reliancedigital.in/wp-content/uploads/2021/04/cover_choose_linux_distr.jpg)
 
-### Infrastructure services
+### Infrastructure Services
 
 |        Category        |     Category     |         Category         |        Category        |
 | :--------------------: | :--------------: | :----------------------: | :--------------------: |
