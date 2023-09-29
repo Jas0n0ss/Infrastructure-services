@@ -2,7 +2,7 @@
 
 ### Infrastructure Services
 
-|        Category        |     Category     |         Category         |        Category        |
-| :--------------------: | :--------------: | :----------------------: | :--------------------: |
-| [Container](Container) |  [Linux](Linux)  | [kubernetes](kubernetes) | [Webserver](Webserver) |
-|  [Database](Database)  | [Devops](devops) |    [Monitor](Monitor)    |   [Network](Network)   |
+| Category                 | Category         |
+| :----------------------- | :--------------- |
+| [kubernetes](kubernetes) | [Linux](Linux)   |
+| [Database](Database)     | [Devops](devops) |

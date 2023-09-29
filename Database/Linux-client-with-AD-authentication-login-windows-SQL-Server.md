@@ -7,12 +7,12 @@ abbrlink: 134
 date: 2022-09-16 16:35:02
 ---
 
-> Pre-Work
+#### **Pre-Work**
 
 - linux should join AD same as SQL Server
 - setspn on windows SQL Server for linux
 
-> Windows SQL Server
+#### On Windows SQL Server
 
 ```powershell
 C:\Users\Administrator>setspn -L sqladmin
@@ -35,7 +35,7 @@ Registered ServicePrincipalNames for CN=sqladmin,CN=Users,DC=sqlrepro,DC=edu:
         MSSQLSvc/primarydc:1433
         MSSQLSvc/2016cl.sqlrepro.edu:1433
 ```
-> linux:
+#### On linux server
 
 ```bash
 [sqladmin@sqlrepro.edu@linux ~]$ hostname

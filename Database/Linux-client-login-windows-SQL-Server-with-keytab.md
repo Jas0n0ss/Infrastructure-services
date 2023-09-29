@@ -8,8 +8,12 @@ date: 2022-09-16 16:37:40
 ---
 
 #### Linux client  login windows SQL Server with keytab
-https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-active-directory-authentication?view=sql-server-ver16
-- create sql login `SQLREPRO\sqlroot` and request kdc ticket
+[sql-server-linux-active-directory-authentication](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-active-directory-authentication?view=sql-server-ver16)
+
+---
+
+##### create sql login `SQLREPRO\sqlroot` and request kdc ticket
+
 ```bash
 [sqlroot@sqlrepro.edu@linux ~]$ kinit sqlroot@SQLREPRO.EDU
 Password for sqlroot@SQLREPRO.EDU:
@@ -26,7 +30,8 @@ SQLREPRO\sqlroot
 
 (1 rows affected)
 ```
-- create keytab on windows for user `sqlrepro\sqlroot`
+##### create keytab on windows for user `sqlrepro\sqlroot`
+
 ```powershell
 #
 ktpass /princ MSSQLSvc/primarydc.SQLREPRO.EDU:1433@SQLREPRO.EDU /ptype KRB5_NT_PRINCIPAL /crypto aes256-sha1 /mapuser SQLREPRO\sqlroot /out sqlroot.keytab -setpass -setupn /kvno 2 /pass MyPasswo0d1
@@ -41,7 +46,8 @@ ktpass /princ sqlroot@SQLREPRO.EDU /ptype KRB5_NT_PRINCIPAL /crypto aes256-sha1 
 #
 ktpass /princ sqlroot@SQLREPRO.EDU /ptype KRB5_NT_PRINCIPAL /crypto rc4-hmac-nt /mapuser SQLREPRO\sqlroot  /in sqlroot.keytab /out sqlroot.keytab -setpass -setupn /kvno 2 /pass MyPasswo0d1
 ```
-- copy the keytab to linux server and grant required permission
+##### copy the keytab to linux server and grant required permission
+
 ```bash
 # copy the sqlroot.keytab to linux server with winscp
 [root@linux ~]# chmod 755 /home/sqlroot@sqlrepro.edu/sqlroot.keytab
@@ -59,7 +65,8 @@ Valid starting       Expires              Service principal
 08/15/2022 04:27:44  08/15/2022 14:27:44  krbtgt/SQLREPRO.EDU@SQLREPRO.EDU
         renew until 08/22/2022 04:27:44
 ```
-- test connection
+##### Test connection
+
 ```bash
 [sqlroot@sqlrepro.edu@linux ~]$ sqlcmd -S primarydc -E -Q 'select system_user'                                                                                                      
 ----------------------------

@@ -11,30 +11,19 @@ abbrlink: 54154
 date: 2022-09-19 18:20:14
 ---
 
-* Installing SQL Server High Availability Package
-* Installing and Enabling SQL Server Agent if its not installed and enabled already
-* Enable SQL server High Availability on each Node
-* Creating AG Group EndPoint and Certificates
-* Copy Certificates of each node into all other Nodes
-* Change ownership and group association to mysql(User)
-* Restore each Certificate with authenticated user ( create user if you don't have already one)
-* Grant AG Group using SSMS
-* Create SQL Server Login and Permission for Pacemaker
-* Create Availability Group resource in pacemaker
-* Create IP for Listener in PackeMaker
-* Create Listener using same IP
-* Test Failover
+#### Install SQL Server High Availability Package
 
-- Install SQL Server High Availability Package
 ```bash
 sudo yum install mssql-server-ha
 ```
--  Enable AlwaysOn Avaiability Groups and resetart SQL Server on both nodes
+#### Enable AlwaysOn Avaiability Groups and resetart SQL Server on both nodes
+
 ```bash
 sudo /opt/mssql/bin/mssql-conf set hadr.hadrenabled  1
 sudo systemctl restart mssql-server
 ```
-- Open SSMS and create Certificate for each node
+#### Open SSMS and create Certificate for each node
+
 ```sql
 ---Node Name : TBSLinuxNode1
 CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Pass@123';
@@ -77,7 +66,8 @@ FOR DATABASE_MIRRORING (
     ROLE = ALL);
 GO
 ```
-- Copy Certificate of one node to other using SCP 
+#### Copy Certificate of one node to other using SCP 
+
 ```bash
 # on Node1
 scp -r root@TBSLinuxNode1:/var/opt/mssql/data/TBSLinuxNode1_Cert.cer 
@@ -90,8 +80,10 @@ sudo chown mssql:mssql TBSLinuxNode2_Cert.cer
 sudo chown mssql:mssql TBSLinuxNode1_Cert.cer
 ```
 
-- Create instance Level SQL User (TBSAGUser in my case on each node) using SSMS
+#### Create instance Level SQL User (TBSAGUser in my case on each node) using SSMS
+
 Open SSMS and create User
+
 ```sql
 ---Restore certificate of Other Nodes into the present node using SSMS below: Login to TBSLinuxNode1
 CREATE CERTIFICATE TBSLinuxNode2_Cert
@@ -106,7 +98,8 @@ FROM FILE = '/var/opt/mssql/data/TBSLinuxNode1_Cert.cer';
 ---Grant permission to connec to the endpoint of TBSLinuxNode2
 GRANT CONNECT ON ENDPOINT::TBSSQLAG TO TBSAGUser;
 ```
-- Create Availability Group using SSMS with Cluster type External
+#### Create Availability Group using SSMS with Cluster type External
+
 ```bash
 # Create a new login or use the same login to give Pacemaker permission and provide view server permission, I will give sysadmin to this user just for this demo.On all Nodes Edit vi /var/opt/mssql/secrets/passwd using emacs and update with user and password that you created for Pacemaker and save it
 vim /var/opt/mssql/secrets/passwd
