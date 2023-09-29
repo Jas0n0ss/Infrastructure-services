@@ -1,31 +1,10 @@
 
 ## Repository of teches to architecture
 
-[TOC]
+> Overview
 
-### Linux
+---
 
-- [base_commands.md](linux/base_commands.md) 
--  [git.md](linux/git.md) 
--  [Linux_kernel.md](linux/Linux_kernel.md) 
--  [os.md](linux/os.md) 
-
-### Network
-
-- [network.md](network/network.md) 
-
-### Database
-
-- [sql.md](database/sql.md) 
-
-### Docker
-
-- [docker.md](docker/docker.md) 
-
-### k8s
-
-- ...
-
-### Storage
-
-- ...
+| [linux](linux/README.md)      | [k8s](k8s/README.md)       | [database](database/sql.md)  |
+| ----------------------------- | -------------------------- | ---------------------------- |
+| [network](network/network.md) | [docker](docker/docker.md) | [homesrv](homesrv/README.md) |
