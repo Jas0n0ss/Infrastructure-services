@@ -1,6 +1,8 @@
 
 ## Repository of teches to architecture
 
+[TOC]
+
 ### Linux
 
 - [base_commands.md](linux/base_commands.md) 
